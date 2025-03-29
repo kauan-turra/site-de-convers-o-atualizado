@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <center><h1 style="font-family: cursive; font-size:50px; color:rgb(255, 0, 0)">unidade conversora</h1></center>
+    </head>
+
+<body style="background-color:azure;">
+    <section id="home">
+        <header><b>unidade conversora</b></header>
+        <nav>
+            <!-- botao para temperatura -->
+            <a href="#temperatura"><button>Temperatura</button></a>
+            <!-- botão para peso -->
+            <a href="#peso"><button>peso</button></a>
+            <!-- Botão para distancia -->
+            <a href="#distancia"><button>distancia</button></a>
+        </nav>
+    </section>
+
+    <div id="seções de conversão">
+        <section id="temperatura">
+            <div id="tmp">
+                <figure>
+                    <img src="C:\Users\kauan\OneDrive\Pictures/termometro.jpg" width="200px"/>
+                    <figcaption>conversão de celcius para fahrenheit</figcaption>
+                </figure>
+                <article>
+                    <fieldset>
+                        <legend>temperatura</legend>
+                        <label for="c">Celsius</label> <br/>
+                        <input type="number" id="c"> <br/>
+                        <button id="temperaturaBtn">converter</button> <br/>
+                        <input type="number" id="f"> <br/>
+                        <label for="f">Fahrenheit</label>
+                    </fieldset>
+                </article>
+                <aside>Para converter celsius para fahrenheit, use esta fórmula substituindo o `C` pela sua temperatura em celsius: (C × 9/5) + 32</aside>
+            </div>
+        </section>
+
+        <section id="peso">
+            <div id="kg">
+                <figure>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/weight.png" width="200px"/>
+                    <figcaption>conversão de quilos para libras</figcaption>
+                </figure>
+                <article>
+                    <fieldset>
+                        <legend>peso</legend>
+                        <label for="Kg">Kg</label></br>
+                        <input type="number" id="kg"><br/>
+                        <button id="pesoBtn">converter</button></br>
+                        <input type="number" id="ibf" readonly></br>
+                        <label for="ibf">libras</label></br>
+                    </fieldset>
+                </article>
+                <aside>para converter o peso de quilos para libras, use esta fórmula substituindo "Kg" pelo peso em quilogramas (kg x 2.205)</aside>
+            </div>
+        </section>
+
+        <section id="distancia">
+            <div id="dst">
+                <figure>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/speedo.png" width="200px"/>
+                    <figcaption>conversão de quilometros para milhas</figcaption>
+                </figure>
+                <article>
+                    <fieldset>
+                        <legend>distancia</legend>
+                        <label for="Km">Km</label></br>
+                        <input type="number" id="Km"></br>
+                        <button id="distanciaBtn">converter</button></br>
+                        <input type="number" id="m"></br>
+                        <label for="m">milhas</label>
+                    </fieldset>
+                </article>
+                <aside>para converter a distância de quilometros para milhas, use esta fórmula substituindo "km" pela distância (km ÷ 1.609)</aside>
+            </div>
+        </section>
+
+        <div id="go-home">
+            <a href="#home">
+                <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/home.svg"/>
+            </a>
+        </div>
+
+        <footer>unidade conversora criada por kauan turra</footer>
+    </div>
+
+    <script>
+        // Função de conversão de temperatura
+        document.getElementById('temperaturaBtn').addEventListener('click', function() {
+            const celsius = parseFloat(document.getElementById('c').value);
+            if (!isNaN(celsius)) {
+                const fahrenheit = (celsius * 9 / 5) + 32;
+                document.getElementById('f').value = fahrenheit.toFixed(2);
+            } else {
+                alert("Por favor, insira um valor válido para Celsius!");
+            }
+        });
+
+        // Função de conversão de peso
+        document.getElementById('pesoBtn').addEventListener('click', function() {
+            let kg = document.getElementById('kg').value;
+
+            // Verificando se o campo de Kg não está vazio e se é um número válido
+            if (kg.trim() === "" || isNaN(kg) || kg <= 0) {
+                alert("Por favor, insira um número válido para Kg!");
+                return;
+            }
+
+            // Tratando possíveis vírgulas e convertendo para ponto
+            kg = parseFloat(kg.replace(",", "."));
+
+            // Realizando a conversão para libras
+            const libras = kg * 2.205;
+
+            // Colocando o resultado no campo de libras
+            document.getElementById('ibf').value = libras.toFixed(2);
+        });
+
+        // Função de conversão de distância
+        document.getElementById('distanciaBtn').addEventListener('click', function() {
+            const km = parseFloat(document.getElementById('Km').value);
+            if (!isNaN(km)) {
+                const milhas = km / 1.609;
+                document.getElementById('m').value = milhas.toFixed(2);
+            } else {
+                alert("Por favor, insira um valor válido para Km!");
+            }
+        });
+    </script>
+</body>
+</html>
