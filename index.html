@@ -1,95 +1,101 @@
 <!DOCTYPE html>
-<html>
-    <head link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <center><h1 style="font-family: cursive; font-size:50px; color:rgb(255, 0, 0)">unidade conversora</h1></center>
-    </head>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade Conversora</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-azure flex justify-center items-center min-h-screen">
+    <div class="container mx-auto px-4">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-cursive text-red-500">Unidade Conversora</h1>
+        </header>
 
-<center><body style="background-color:azure;">
-    <section id="home">
-        <header><b>unidade conversora</b></header>
-        <nav>
-            <!-- botao para temperatura -->
-            <a href="#temperatura"><button>Temperatura</button></a>
-            <!-- botão para peso -->
-            <a href="#peso"><button>peso</button></a>
-            <!-- Botão para distancia -->
-            <a href="#distancia"><button>distancia</button></a>
+        <nav class="text-center mb-6">
+            <a href="#temperatura" class="inline-block px-4 py-2 bg-blue-500 text-white rounded-md m-2 hover:bg-blue-600">Temperatura</a>
+            <a href="#peso" class="inline-block px-4 py-2 bg-blue-500 text-white rounded-md m-2 hover:bg-blue-600">Peso</a>
+            <a href="#distancia" class="inline-block px-4 py-2 bg-blue-500 text-white rounded-md m-2 hover:bg-blue-600">Distância</a>
         </nav>
-    </section>
 
-    <div id="seções de conversão">
-        <section id="temperatura">
-            <div id="tmp">
-                <figure>
-                    <img src="termometro.jpg" width="200px"/>
-                    <figcaption>conversão de celcius para fahrenheit</figcaption>
+        <section id="temperatura" class="mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <figure class="text-center">
+                    <img src="termometro.jpg" alt="Termômetro" class="w-32 mx-auto mb-4"/>
+                    <figcaption class="font-semibold">Conversão de Celsius para Fahrenheit</figcaption>
                 </figure>
-                <article>
-                    <fieldset>
-                        <u><center><legend>Temperatura</legend></center></u>
-                        <br>
-                        <label for="c">Celsius</label> <br/>
-                        <input type="number" id="c"> <br/>
-                        <button id="temperaturaBtn">converter</button> <br/>
-                        <input type="number" id="f"> <br/>
-                        <label for="f">Fahrenheit</label>
-                    </fieldset>
-                </article>
-                <aside>Para converter celsius para fahrenheit, use esta fórmula substituindo o `C` pela sua temperatura em celsius: (C × 9/5) + 32</aside>
+                <fieldset class="space-y-4">
+                    <legend class="text-lg font-semibold text-center underline">Temperatura</legend>
+                    <div>
+                        <label for="c" class="block">Celsius</label>
+                        <input type="number" id="c" class="w-full p-2 border rounded-md" />
+                    </div>
+                    <button id="temperaturaBtn" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Converter</button>
+                    <div>
+                        <input type="number" id="f" class="w-full p-2 border rounded-md mt-2" readonly />
+                        <label for="f" class="block">Fahrenheit</label>
+                    </div>
+                </fieldset>
+                <aside class="mt-4 text-sm text-gray-500">Para converter Celsius para Fahrenheit, use a fórmula: (C × 9/5) + 32</aside>
             </div>
         </section>
 
-        <section id="peso">
-            <div id="kg">
-                <figure>
-                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/weight.png" width="200px"/>
-                    <figcaption>conversão de quilos para libras</figcaption>
+        <section id="peso" class="mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <figure class="text-center">
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/weight.png" alt="Peso" class="w-32 mx-auto mb-4"/>
+                    <figcaption class="font-semibold">Conversão de Quilos para Libras</figcaption>
                 </figure>
-                <article>
-                    <fieldset>
-                        <u><center><legend>Peso</legend></center></u>
-                        <label for="Kg">Kg</label></br>
-                        <input type="number" id="kg"><br/>
-                        <button id="pesoBtn">converter</button></br>
-                        <input type="number" id="ibf" readonly></br>
-                        <label for="ibf">libras</label></br>
-                    </fieldset>
-                </article>
-                <aside>para converter o peso de quilos para libras, use esta fórmula substituindo "Kg" pelo peso em quilogramas (kg x 2.205)</aside>
+                <fieldset class="space-y-4">
+                    <legend class="text-lg font-semibold text-center underline">Peso</legend>
+                    <div>
+                        <label for="kg" class="block">Kg</label>
+                        <input type="number" id="kg" class="w-full p-2 border rounded-md" />
+                    </div>
+                    <button id="pesoBtn" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Converter</button>
+                    <div>
+                        <input type="number" id="ibf" class="w-full p-2 border rounded-md mt-2" readonly />
+                        <label for="ibf" class="block">Libras</label>
+                    </div>
+                </fieldset>
+                <aside class="mt-4 text-sm text-gray-500">Para converter de Quilos para Libras, use a fórmula: Kg × 2.205</aside>
             </div>
         </section>
 
-        <section id="distancia">
-            <div id="dst">
-                <figure>
-                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/speedo.png" width="200px"/>
-                    <figcaption>conversão de quilometros para milhas</figcaption>
+        <section id="distancia" class="mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <figure class="text-center">
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/speedo.png" alt="Distância" class="w-32 mx-auto mb-4"/>
+                    <figcaption class="font-semibold">Conversão de Quilômetros para Milhas</figcaption>
                 </figure>
-                <article>
-                    <fieldset>
-                        <u><center><legend>Distancia</legend></center></u>
-                        <label for="Km">Km</label></br>
-                        <input type="number" id="Km"></br>
-                        <button id="distanciaBtn">converter</button></br>
-                        <input type="number" id="m"></br>
-                        <label for="m">milhas</label>
-                    </fieldset>
-                </article>
-                <aside>para converter a distância de quilometros para milhas, use esta fórmula substituindo "km" pela distância (km ÷ 1.609)</aside>
+                <fieldset class="space-y-4">
+                    <legend class="text-lg font-semibold text-center underline">Distância</legend>
+                    <div>
+                        <label for="Km" class="block">Km</label>
+                        <input type="number" id="Km" class="w-full p-2 border rounded-md" />
+                    </div>
+                    <button id="distanciaBtn" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Converter</button>
+                    <div>
+                        <input type="number" id="m" class="w-full p-2 border rounded-md mt-2" readonly />
+                        <label for="m" class="block">Milhas</label>
+                    </div>
+                </fieldset>
+                <aside class="mt-4 text-sm text-gray-500">Para converter de Quilômetros para Milhas, use a fórmula: Km ÷ 1.609</aside>
             </div>
         </section>
-        <br>
-        <div id="go-home">
+
+        <div class="text-center mt-8">
             <a href="#home">
-                <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/home.svg"/>
+                <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/home.svg" alt="Home" class="w-8"/>
             </a>
         </div>
 
-        <footer>unidade conversora criada por kauan turra</footer>
+        <footer class="text-center mt-8 text-sm text-gray-500">
+            Unidade Conversora criada por Kauan Turra
+        </footer>
     </div>
 
     <script>
-        // Função de conversão de temperatura
         document.getElementById('temperaturaBtn').addEventListener('click', function() {
             const celsius = parseFloat(document.getElementById('c').value);
             if (!isNaN(celsius)) {
@@ -100,27 +106,17 @@
             }
         });
 
-        // Função de conversão de peso
         document.getElementById('pesoBtn').addEventListener('click', function() {
             let kg = document.getElementById('kg').value;
-
-            // Verificando se o campo de Kg não está vazio e se é um número válido
             if (kg.trim() === "" || isNaN(kg) || kg <= 0) {
                 alert("Por favor, insira um número válido para Kg!");
                 return;
             }
-
-            // Tratando possíveis vírgulas e convertendo para ponto
             kg = parseFloat(kg.replace(",", "."));
-
-            // Realizando a conversão para libras
             const libras = kg * 2.205;
-
-            // Colocando o resultado no campo de libras
             document.getElementById('ibf').value = libras.toFixed(2);
         });
 
-        // Função de conversão de distância
         document.getElementById('distanciaBtn').addEventListener('click', function() {
             const km = parseFloat(document.getElementById('Km').value);
             if (!isNaN(km)) {
@@ -131,5 +127,5 @@
             }
         });
     </script>
-</body></center>
+</body>
 </html>
